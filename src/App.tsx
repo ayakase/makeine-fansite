@@ -1,34 +1,76 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { PlaceholdersAndVanishInput } from "./components/ChatInput"
+import OverlayAnimation from "./components/Particles/OverlayAnimation";
+import { NavBar } from "./components/Layout/NavBar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { Chat } from "./pages/Chat";
+import { Game } from "./pages/Game";
 function App() {
-  const [count, setCount] = useState(0)
+  const placeholders = [
+    "What's the first rule of Fight Club?",
+    "Who is Tyler Durden?",
+    "Where is Andrew Laeddis Hiding?",
+    "Write a Javascript method to reverse a string",
+    "How to assemble your own PC?",
+  ];
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  };
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("submitted");
+  };
+  const links = [
+    {
+      title: "Home",
+      icon: (
+        <div className="h-full w-full bg-red-500 text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/",
+    },
+    {
+      title: "Chat",
+      icon: (
+        <div className="h-full w-full bg-red-500 text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/chat",
+    },
+    {
+      title: "Gam",
+      icon: (
+        <div className="h-full w-full bg-red-500 text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/game",
+    },
+
+
+  ];
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    // <div className="h-full w-full">
+    //   <PlaceholdersAndVanishInput
+    //     placeholders={placeholders}
+    //     onChange={handleChange}
+    //     onSubmit={onSubmit}
+    //   />
+    //   <OverlayAnimation name="komari" ></OverlayAnimation>
+    // </div>
+
+    <div className="w-screen overflow-hidden">
+      <Router>
+        <div className="">
+          <div className="w-full absolute bottom-10 flex flex-row justify-center">
+            <NavBar items={links}></NavBar>
+          </div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/game" element={<Game />} />
+          </Routes>
+        </div>
+      </Router>
+    </div>
+
   )
 }
 
