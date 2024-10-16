@@ -76,7 +76,7 @@ function App() {
       <Router>
         <div >
           <div className="w-full absolute bottom-10 flex flex-row justify-center">
-            <NavBar items={links}></NavBar>
+            <NavBar></NavBar>
           </div>
           <Routes>
             <Route path="/" element={<Home />} />

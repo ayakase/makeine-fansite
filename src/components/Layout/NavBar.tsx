@@ -5,7 +5,10 @@
  **/
 
 import { cn } from "../../lib/utils";
-// import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
+import { FaHome } from "react-icons/fa";
+import { PiChatTeardropTextBold } from "react-icons/pi";
+
+
 import {
   AnimatePresence,
   MotionValue,
@@ -20,14 +23,37 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { useRef, useState } from "react";
 
 export const NavBar = ({
-  items,
   desktopClassName,
   mobileClassName,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
+  const items = [
+    {
+      title: "Home",
+      icon: (
+        // <div className="h-full w-full  text-neutral-500  dark:text-neutral-300" >
+        <FaHome className=" w-full h-full" />
+        // </div>
+      ),
+      href: "/",
+    },
+    {
+      title: "Chat",
+      icon: (
+        <PiChatTeardropTextBold className=" w-full h-full" />
+      ),
+      href: "/chat",
+    },
+    {
+      title: "Gam",
+      icon: (
+        <FaHome className=" w-full h-full" />
+      ),
+      href: "/game",
+    },
+  ];
   return (
     <>
       <FloatingDockDesktop items={items} className={desktopClassName} />
@@ -104,7 +130,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden md:flex h-16 gap-4 items-end  rounded-2xl bg-gray-50  px-4 pb-3",
+        "mx-auto hidden md:flex h-16 gap-4 items-end  rounded-2xl bg-transparent  px-4 pb-3",
         className
       )}
     >
