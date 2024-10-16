@@ -1,4 +1,4 @@
-import { PlaceholdersAndVanishInput } from "./components/ChatInput"
+import { PlaceholdersAndVanishInput } from "./components/ChatInput";
 import OverlayAnimation from "./components/Particles/OverlayAnimation";
 import { NavBar } from "./components/Layout/NavBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -25,26 +25,24 @@ function App() {
     {
       title: "Home",
       icon: (
-        <div className="h-full w-full bg-red-500 text-neutral-500 dark:text-neutral-300" />
+        <div className="h-full w-full  text-neutral-500 dark:text-neutral-300" />
       ),
       href: "/",
     },
     {
       title: "Chat",
       icon: (
-        <div className="h-full w-full bg-red-500 text-neutral-500 dark:text-neutral-300" />
+        <div className="h-full w-full  text-neutral-500 dark:text-neutral-300" />
       ),
       href: "/chat",
     },
     {
       title: "Gam",
       icon: (
-        <div className="h-full w-full bg-red-500 text-neutral-500 dark:text-neutral-300" />
+        <div className="h-full w-full  text-neutral-500 dark:text-neutral-300" />
       ),
       href: "/game",
     },
-
-
   ];
   return (
     // <div className="h-full w-full">
@@ -70,8 +68,7 @@ function App() {
         </div>
       </Router>
     </div>
-
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,4 +1,3 @@
-
 // import "./index.css";
 import Overlay from "../../components/Particles/OverlayAnimation";
 import ElapsedTime from "../../components/Particles/Counter";
@@ -6,20 +5,13 @@ import { TypewriterEffectSmooth } from "../../components/Particles/TypeWriter";
 export function Home() {
   const words = [
     {
-      text: "Build",
+      text: "It",
     },
     {
-      text: "awesome",
+      text: "has",
     },
     {
-      text: "apps",
-    },
-    {
-      text: "with",
-    },
-    {
-      text: "Aceternity.",
-      className: "text-blue-500 dark:text-blue-500",
+      text: "been",
     },
   ];
   return (

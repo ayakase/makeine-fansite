@@ -46,7 +46,7 @@ const ElapsedTime = () => {
       .map((digit: string, index: number) => (
         <span
           key={index}
-          className="h-full text-3xl sm:text-6xl lg:text-8xl w-10 h-12 sm:w-16 lg:w-24 grid place-items-center bg-[#FFF100] rounded-xl"
+          className="h-full text-3xl sm:text-6xl lg:text-8xl w-10 sm:w-16 lg:w-24 grid place-items-center bg-[#FFF100] rounded-xl"
         >
           {digit}
         </span>
