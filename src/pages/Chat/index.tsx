@@ -1,10 +1,17 @@
 import Overlay from "../../components/Particles/OverlayAnimation";
 import { useState } from "react";
+import { PlaceholdersAndVanishInput } from "../../components/ChatInput";
 
 export function Chat() {
-  const [messages, setMessages] = useState<string[]>([]); 
-  const [inputValue, setInputValue] = useState<string>(""); 
-
+  const [messages, setMessages] = useState<string[]>([]);
+  const [inputValue, setInputValue] = useState<string>("");
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  };
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("submitted");
+  };
   const sendMessage = () => {
     if (inputValue.trim()) {
       setMessages([...messages, inputValue]);
@@ -15,7 +22,7 @@ export function Chat() {
   return (
     <>
       <Overlay name="lemon" />
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+      <div className="flex flex-col items-center justify-center min-h-screen p-4">
         <div className="w-full max-w-lg flex flex-col h-[600px] bg-white shadow-lg rounded-lg overflow-hidden">
           {/* Header */}
           <div className="bg-gradient-to-r from-indigo-500 to-purple-500 p-4 text-white text-center font-semibold">
@@ -42,7 +49,7 @@ export function Chat() {
 
           {/* Input and send button */}
           <div className="p-4 bg-gray-50 flex items-center space-x-4">
-            <input
+            {/* <input
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
@@ -54,7 +61,11 @@ export function Chat() {
               className="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md"
             >
               Send
-            </button>
+            </button> */}
+            <PlaceholdersAndVanishInput
+              onChange={(e) => setInputValue(e.target.value)}
+              onSubmit={onSubmit}
+            ></PlaceholdersAndVanishInput>
           </div>
         </div>
       </div>

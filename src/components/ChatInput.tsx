@@ -5,14 +5,21 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "../lib/utils";
 
 export function PlaceholdersAndVanishInput({
-    placeholders,
+    // placeholders,
     onChange,
     onSubmit,
 }: {
-    placeholders: string[];
+    // placeholders: string[];
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }) {
+    const placeholders = [
+        "What's the first rule of Fight Club?",
+        "Who is Tyler Durden?",
+        "Where is Andrew Laeddis Hiding?",
+        "Write a Javascript method to reverse a string",
+        "How to assemble your own PC?",
+    ];
     const [currentPlaceholder, setCurrentPlaceholder] = useState(0);
 
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -52,7 +59,7 @@ export function PlaceholdersAndVanishInput({
         if (!inputRef.current) return;
         const canvas = canvasRef.current;
         if (!canvas) return;
-        const ctx = canvas.getContext("2d");
+        const ctx = canvas.getContext("2d", { willReadFrequently: true });
         if (!ctx) return;
 
         canvas.width = 800;
@@ -201,7 +208,7 @@ export function PlaceholdersAndVanishInput({
                 value={value}
                 type="text"
                 className={cn(
-                    "w-full relative text-sm sm:text-base z-50 border-none  bg-transparent text-black h-full rounded-full focus:outline-none focus:ring-0 pl-4 sm:pl-10 pr-20",
+                    "w-full relative text-sm sm:text-base z-40 border-none  bg-transparent text-black h-full rounded-full focus:outline-none focus:ring-0 pl-4 sm:pl-10 pr-20",
                     animating && "text-transparent "
                 )}
             />
@@ -209,7 +216,7 @@ export function PlaceholdersAndVanishInput({
             <button
                 disabled={!value}
                 type="submit"
-                className="absolute right-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 rounded-full disabled:bg-gray-100 bg-black  transition duration-200 flex items-center justify-center"
+                className="absolute right-2 top-1/2 z-40 -translate-y-1/2 h-8 w-8 rounded-full disabled:bg-gray-100 bg-black  transition duration-200 flex items-center justify-center"
             >
                 <motion.svg
                     xmlns="http://www.w3.org/2000/svg"

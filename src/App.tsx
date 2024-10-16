@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Chat } from "./pages/Chat";
 import { Game } from "./pages/Game";
+import "./App.css"
 function App() {
   const placeholders = [
     "What's the first rule of Fight Club?",
@@ -25,21 +26,21 @@ function App() {
     {
       title: "Home",
       icon: (
-        <div className="h-full w-full  text-neutral-500 dark:text-neutral-300" />
+        <div className="h-full w-full  text-neutral-500 bg-red-500 dark:text-neutral-300" />
       ),
       href: "/",
     },
     {
       title: "Chat",
       icon: (
-        <div className="h-full w-full  text-neutral-500 dark:text-neutral-300" />
+        <div className="h-full w-full  text-neutral-500 bg-red-500 dark:text-neutral-300" />
       ),
       href: "/chat",
     },
     {
       title: "Gam",
       icon: (
-        <div className="h-full w-full  text-neutral-500 dark:text-neutral-300" />
+        <div className="h-full w-full  text-neutral-500 bg-red-500 dark:text-neutral-300" />
       ),
       href: "/game",
     },
@@ -54,9 +55,26 @@ function App() {
     //   <OverlayAnimation name="komari" ></OverlayAnimation>
     // </div>
 
-    <div className="w-screen overflow-hidden">
+    <div className="wrapper absolute inset-0 overflow-hidden">
+      <div className="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <Router>
-        <div className="">
+        <div >
           <div className="w-full absolute bottom-10 flex flex-row justify-center">
             <NavBar items={links}></NavBar>
           </div>
