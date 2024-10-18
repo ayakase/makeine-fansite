@@ -2,7 +2,7 @@
 import Overlay from "../../components/Particles/OverlayAnimation";
 import ElapsedTime from "../../components/Particles/Counter";
 import { TypewriterEffectSmooth } from "../../components/Particles/TypeWriter";
-// import { TestMatter } from "../../components/Particles/Matter";
+import { BackgroundLines } from "../../components/Particles/BackgroundLine";
 export function Home() {
   const words = [
     {
@@ -22,7 +22,10 @@ export function Home() {
           <div>
             <div className="">
               <TypewriterEffectSmooth words={words} />
-              <ElapsedTime></ElapsedTime>
+              <BackgroundLines>
+
+                <ElapsedTime></ElapsedTime>
+              </BackgroundLines>
               {/* <TestMatter></TestMatter> */}
             </div>
           </div>
