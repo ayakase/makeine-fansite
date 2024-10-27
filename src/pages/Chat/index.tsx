@@ -2,6 +2,7 @@ import Overlay from "../../components/Particles/OverlayAnimation";
 import { useState } from "react";
 import { ChatInput } from "../../components/ChatInput";
 import { BackgroundLines } from "../../components/Particles/BackgroundLine";
+import { SelectCharacter } from "../../components/Particles/CharacterSelectionChat";
 export function Chat() {
   const [messages, setMessages] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState<string>("");
@@ -47,6 +48,7 @@ export function Chat() {
 
             {/* Input and send button */}
             <div className="p-4 flex items-center space-x-4">
+              <SelectCharacter></SelectCharacter>
               <ChatInput
                 onChange={(e) => setInputValue(e.target.value)}
                 onSubmit={onSubmit}
