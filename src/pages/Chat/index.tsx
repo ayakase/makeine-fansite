@@ -49,10 +49,10 @@ export function Chat() {
             {/* Input and send button */}
             <div className="p-4 flex items-center space-x-4">
               <SelectCharacter></SelectCharacter>
-              <ChatInput
+              {/* <ChatInput
                 onChange={(e) => setInputValue(e.target.value)}
                 onSubmit={onSubmit}
-              ></ChatInput>
+              ></ChatInput> */}
             </div>
           </div>
         </div>

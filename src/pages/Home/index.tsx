@@ -1,7 +1,13 @@
 // import "./index.css";
 import Overlay from "../../components/Particles/OverlayAnimation";
 import ElapsedTime from "../../components/Particles/Counter";
-import { TypewriterEffectSmooth, TypewriterEffect } from "../../components/Particles/TypeWriter";
+import {
+  TypewriterEffectSmooth,
+  TypewriterEffect,
+} from "../../components/Particles/TypeWriter";
+import AnnaBG from "../../assets/img/background-characters/Anna-home.png";
+import "./style.css";
+
 export function Home() {
   const words1 = [
     {
@@ -43,16 +49,14 @@ export function Home() {
       <div className="background">
         <div className="h-screen w-screen overflow-auto">
           <div className=" w-full h-screen grid place-items-center">
-            <div>
+            <div className="flex flex-col gap-6">
               <TypewriterEffect words={words1} />
               <ElapsedTime></ElapsedTime>
               <TypewriterEffect words={words2} />
             </div>
             {/* <TestMatter></TestMatter> */}
           </div>
-          <div className=" h-screen ">
-
-          </div>
+          <div className=" h-screen "></div>
           <Overlay name="anna"></Overlay>
         </div>
       </div>
