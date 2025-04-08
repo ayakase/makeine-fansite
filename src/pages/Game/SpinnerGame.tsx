@@ -4,7 +4,7 @@ import nukuGratz from "../../assets/nuku-gratz.png";
 import Fireworks from "react-canvas-confetti/dist/presets/fireworks";
 
 export default function SpinnerGame() {
-  const [number, setNumber] = useState("🎲");
+  const [number, setNumber] = useState<string | number>("🎲");
   const [spinning, setSpinning] = useState(false);
   const [showFireworks, setShowFireworks] = useState(false);
   const [showGratz, setShowGratz] = useState(false);
