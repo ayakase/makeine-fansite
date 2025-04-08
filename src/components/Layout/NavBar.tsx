@@ -5,7 +5,7 @@
  **/
 
 import { cn } from "../../lib/utils";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaGamepad } from "react-icons/fa";
 import { PiChatTeardropTextBold } from "react-icons/pi";
 
 
@@ -39,17 +39,17 @@ export const NavBar = ({
       ),
       href: "/",
     },
+    // {
+    //   title: "Chat",
+    //   icon: (
+    //     <PiChatTeardropTextBold className=" w-full h-full" />
+    //   ),
+    //   href: "/chat",
+    // },
     {
-      title: "Chat",
+      title: "Game",
       icon: (
-        <PiChatTeardropTextBold className=" w-full h-full" />
-      ),
-      href: "/chat",
-    },
-    {
-      title: "Gam",
-      icon: (
-        <FaHome className=" w-full h-full" />
+        <FaGamepad className=" w-full h-full" />
       ),
       href: "/game",
     },
